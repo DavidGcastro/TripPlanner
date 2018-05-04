@@ -100,7 +100,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const map = __webpack_require__(/*! ./map */ \"./src/map.js\");\nconst marker = __webpack_require__(/*! ./marker */ \"./src/marker.js\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const map = __webpack_require__(/*! ./map */ \"./src/map.js\");\nconst marker = __webpack_require__(/*! ./marker */ \"./src/marker.js\");\n\nmarker('hotels', [-74.009151, 40.705086]);\nconsole.log(map)\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -122,7 +122,7 @@ eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/map
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\nmapboxgl.accessToken = 'pk.eyJ1IjoibGl6enRoYWJldCIsImEiOiJjamdzNGdlY3YwZWJyMndxdTlxNjNqNWkyIn0.I7XlujocHQGIOaEpQJNe6Q';\nconst map = __webpack_require__(/*! ./map.js */ \"./src/map.js\");\nconst markerDomEl = document.createElement('div'); // Create a new, detached DIV\nmarkerDomEl.style.width = '32px';\nmarkerDomEl.style.height = '39px';\nmarkerDomEl.style.backgroundSize = 'contain';\nmarkerDomEl.style.border = '1px solid black';\nmarkerDomEl.style.borderRadius = '10px';\nmarkerDomEl.style.backgroundImage = 'url(https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/v1413777288/tq2jazoybobgvfgngfk8.png)';\n\nconst marker = new mapboxgl.Marker(markerDomEl).setLngLat([-74.009, 40.705]).addTo(map); // [-87.6354, 41.8885] for Chicago\n\n//This works too:\n// let marker = new mapboxgl.Marker().setLngLat([-74.009151, 40.705086]).addTo(map);\n\n\nmodule.exports = marker;\n\n\n//# sourceURL=webpack:///./src/marker.js?");
+eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\nmapboxgl.accessToken = 'pk.eyJ1IjoibGl6enRoYWJldCIsImEiOiJjamdzNGdlY3YwZWJyMndxdTlxNjNqNWkyIn0.I7XlujocHQGIOaEpQJNe6Q';\nconst map = __webpack_require__(/*! ./map.js */ \"./src/map.js\");\n\nconst iconURLs = {\n    hotels: \"http://i.imgur.com/D9574Cu.png\",\n    restaurants: \"http://i.imgur.com/cqR6pUI.png\",\n    activities: \"http://i.imgur.com/WbMOfMl.png\"\n};\n\n\nconst buildMarker = (typeOfPlace, placeCords) => {\n    console.log(\"inside Function\", iconURLs[typeOfPlace])\n\n    let markerDomEl = markerEl(iconURLs[typeOfPlace]);\n    console.log(markerDomEl);\n   let mark =  new mapboxgl.Marker(markerDomEl).setLngLat(placeCords).addTo(map);\n   console.log(\"mark\", mark)\n\n};\n\nconst markerEl = imgUrl => {\n    const markerDomEl = document.createElement('div'); // Create a new, detached DIV\n    markerDomEl.style.width = '32px';\n    markerDomEl.style.height = '39px';\n    markerDomEl.style.backgroundImage = `url(${imgUrl})`;\n    return markerDomEl;\n}\n\n//This works too:\n// let marker = new mapboxgl.Marker().setLngLat([-74.009151, 40.705086]).addTo(map);\n\n\nmodule.exports = buildMarker;\n\n\n//# sourceURL=webpack:///./src/marker.js?");
 
 /***/ })
 

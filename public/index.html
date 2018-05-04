@@ -11,7 +11,57 @@
 </head>
 
 <body>
-    <div id="map"></div>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="parent">
+        <div id="map"></div>
+        <div class="right-sidebar">
+            <div class="hotels">
+                <form>
+                    <label for="hotels">Hotels</label>
+                    <select name="hotels" id="hotels">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <button>X</button>
+                    <label for="restaurants">Restaurants</label>
+                    <select name="restaurants" id="restaurants">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                    </select>
+                    <button>X</button>
+                    <label for="things-to-do">Things To Do</label>
+                    <select name="things-to-do" id="things-to-do">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                    </select>
+                    <button>X</button>
+                </form>
+            </div>
+            <div class="itinerary">
+                <h1>Itinerary</h1>
+                <h2>My Hotel</h2>
+                <ul id="hotels-selected"></ul>
+                <h2>My Restaurants</h2>
+                <ul id="restaurants-selected"></ul>
+                <h2>My Activities</h2>
+                <ul id="things-to-do-selected"></ul>
+            </div>
+        </div>
+    </div>
+
+
     <script src="bundle.js"></script>
 </body>
 

@@ -10,5 +10,27 @@ body {
 
 #map {
     height: 100vh;
-    width: 100vw;
+    background-color: red;
+    flex: 4;
   }
+
+.parent {
+    display: flex;
+}
+
+.right-sidebar {
+    flex: 1;
+    background-color: green;
+}
+
+.hotels {
+    background-color: purple;
+}
+
+label {
+    display: block;
+}
+
+button, select {
+    display: inline-block;
+}
