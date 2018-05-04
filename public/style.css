@@ -1,32 +1,66 @@
 * {
     box-sizing: border-box;
+    list-style: none;
 }
 
 body {
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #C1B5AD;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
+nav > ul {
+    display: flex;
+}
+
+nav > ul > li {
+    flex : 1;
+    transition: all .3s ease;
+
+}
+nav > ul > li:hover{
+    color: lightcoral;
+}
+
+
 #map {
-    height: 100vh;
-    background-color: red;
+ 
     flex: 4;
   }
 
 .parent {
     display: flex;
+    height: 100vh;
 }
 
 .right-sidebar {
-    flex: 1;
-    background-color: green;
+    background: none;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+    
 }
+
+
+
 
 .hotels {
-    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: lightblue;
+    flex:1;
+    height: 50%; 
+    margin-bottom: 20px;
 }
 
+.itinerary{
+    flex:1;
+    height: 50%;
+    background-color: coral;
+}
 label {
     display: block;
 }
