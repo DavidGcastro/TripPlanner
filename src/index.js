@@ -1,1 +1,2 @@
-console.log('Hello from JavaScript');
+const map = require('./map');
+const marker = require('./marker');
